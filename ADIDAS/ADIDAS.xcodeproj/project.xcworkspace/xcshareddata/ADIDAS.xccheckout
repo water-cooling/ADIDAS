@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3D6DD42B-EA52-4758-9AA2-04E6461DBEC9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ADIDAS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>e43c7335-8129-8149-bbd1-0657c377b4c5++6141</key>
+		<string>svn://10.0.245.169/adidas.iphone/trunk</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ADIDAS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>e43c7335-8129-8149-bbd1-0657c377b4c5++6141</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>e43c7335-8129-8149-bbd1-0657c377b4c5++6141</key>
+		<string>svn://10.0.245.169</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://10.0.245.169/adidas.iphone/trunk/ADIDAS.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>e43c7335-8129-8149-bbd1-0657c377b4c5++6141</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>e43c7335-8129-8149-bbd1-0657c377b4c5++6141</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ADIDAS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

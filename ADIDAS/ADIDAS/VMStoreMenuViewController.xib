@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment version="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VMStoreMenuViewController">
+            <connections>
+                <outlet property="BGScrollViewNew" destination="onb-wu-nKu" id="sgh-ae-szX"/>
+                <outlet property="VMrailmanageBtn" destination="Zz2-VK-sPc" id="Rie-3V-WD2"/>
+                <outlet property="auditButton" destination="zdi-h2-dHz" id="8Cg-dn-7Fq"/>
+                <outlet property="employeBtn" destination="UvK-DJ-1aG" id="ahJ-8Q-Q7u"/>
+                <outlet property="exerciseBtn" destination="yiU-H7-f58" id="Agq-8Z-Qnd"/>
+                <outlet property="issueBtn" destination="9dO-rp-QBx" id="wAD-BC-ZMk"/>
+                <outlet property="locationLabel" destination="2dM-ry-1u0" id="Wvv-fv-Gvd"/>
+                <outlet property="onSiteButton" destination="EC8-1u-fdH" id="sPr-mp-4L3"/>
+                <outlet property="popBtn" destination="kRM-sJ-a9K" id="ToQ-qy-fTe"/>
+                <outlet property="railSignBtn" destination="b4L-Kh-vvw" id="CuA-rH-jOo"/>
+                <outlet property="railmanageBtn" destination="zyt-e4-Yay" id="iBH-32-5Hy"/>
+                <outlet property="roIssueBtn" destination="CYf-Iw-VXF" id="pZU-xC-OP8"/>
+                <outlet property="scoreCardBtn" destination="VPa-6s-JME" id="IDQ-9g-jVE"/>
+                <outlet property="signBtn" destination="Qdc-II-2mU" id="BNj-AZ-EBe"/>
+                <outlet property="takephotoBtn" destination="bbZ-42-fut" id="bll-1o-coK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zz2-VK-sPc">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="check.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="VMrailmanage:" destination="-1" eventType="touchUpInside" id="tId-6h-VJH"/>
+            </connections>
+            <point key="canvasLocation" x="-529" y="277"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bbZ-42-fut">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="takephoto.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="takephotos:" destination="-1" eventType="touchUpInside" id="BUj-lK-dRc"/>
+            </connections>
+            <point key="canvasLocation" x="-853" y="457"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9dO-rp-QBx">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="issue.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="issueList:" destination="-1" eventType="touchUpInside" id="NIc-T6-ODQ"/>
+            </connections>
+            <point key="canvasLocation" x="-184" y="100"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qdc-II-2mU">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="sign.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="sign:" destination="-1" eventType="touchUpInside" id="sTn-tZ-0BD"/>
+            </connections>
+            <point key="canvasLocation" x="-184" y="277"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zyt-e4-Yay">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="ro_arm.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="railmanage:" destination="-1" eventType="touchUpInside" id="Awy-l7-wvR"/>
+            </connections>
+            <point key="canvasLocation" x="-531" y="638"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kRM-sJ-a9K">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="pop.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="Campagin:" destination="-1" eventType="touchUpInside" id="rRj-Fm-dm9"/>
+            </connections>
+            <point key="canvasLocation" x="-853" y="277"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VPa-6s-JME">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="scorecard_en.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="scoreCardAction:" destination="-1" eventType="touchUpInside" id="hGH-aB-6im"/>
+            </connections>
+            <point key="canvasLocation" x="-853" y="100"/>
+        </button>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loactionbg.png" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-En-ySN">
+                    <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dM-ry-1u0">
+                    <rect key="frame" x="30" y="64" width="290" height="40"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="onb-wu-nKu">
+                    <rect key="frame" x="0.0" y="207" width="320" height="361"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <point key="canvasLocation" x="892.79999999999995" y="39.580209895052477"/>
+        </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b4L-Kh-vvw">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="ro_signoff.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="railSingAction:" destination="-1" eventType="touchUpInside" id="EY5-qV-yiy"/>
+            </connections>
+            <point key="canvasLocation" x="-529" y="457"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CYf-Iw-VXF">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="ro_issue.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="roIssueAction:" destination="-1" eventType="touchUpInside" id="0BJ-lh-emM"/>
+            </connections>
+            <point key="canvasLocation" x="-184" y="457"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UvK-DJ-1aG">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="employe_count.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="employeAction:" destination="-1" eventType="touchUpInside" id="4VX-Mo-ILY"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="457"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yiU-H7-f58">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="training.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="exerciseAction:" destination="-1" eventType="touchUpInside" id="vgm-pR-ukU"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="276"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zdi-h2-dHz">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="StoreAuditCheck.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="auditAction:" destination="-1" eventType="touchUpInside" id="m4z-2d-dIE"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="100"/>
+        </button>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EC8-1u-fdH">
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" backgroundImage="onsite.png">
+                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            </state>
+            <connections>
+                <action selector="onSiteAction:" destination="-1" eventType="touchUpInside" id="tod-Rd-nUb"/>
+            </connections>
+            <point key="canvasLocation" x="-533" y="99"/>
+        </button>
+    </objects>
+    <resources>
+        <image name="StoreAuditCheck.png" width="139" height="134"/>
+        <image name="check.png" width="139" height="134"/>
+        <image name="employe_count.png" width="139" height="134"/>
+        <image name="issue.png" width="139" height="134"/>
+        <image name="loactionbg.png" width="320" height="34"/>
+        <image name="onsite.png" width="139" height="134"/>
+        <image name="pop.png" width="139.5" height="134.5"/>
+        <image name="ro_arm.png" width="139" height="134"/>
+        <image name="ro_issue.png" width="139.5" height="134.5"/>
+        <image name="ro_signoff.png" width="139" height="134"/>
+        <image name="scorecard_en.png" width="139" height="134"/>
+        <image name="sign.png" width="139" height="134"/>
+        <image name="takephoto.png" width="139" height="134"/>
+        <image name="training.png" width="139" height="134"/>
+    </resources>
+</document>

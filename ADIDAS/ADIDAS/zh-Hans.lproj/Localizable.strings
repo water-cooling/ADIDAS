@@ -1,0 +1,133 @@
+/* 
+ Localizable.strings
+ ADIDAS
+ 
+ Created by testing on 2/24/12.
+ Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+ */
+
+//Title text
+titleLoginText = "系统登录";
+titleChangePwdText = "修改密码";
+titleNearStorelistText = "您附近的门店";
+titleStoreAddText = "新增门店";
+titleMainText = "主菜单";
+titlePicViewText = "照片预览";
+titleSyncDataText = "数据同步";
+
+titleTackPhoneText = "门店拍照";
+titleIstSerVMRepairText = "陈列报修";
+titleIstSerCampText = "活动问题";
+titleIstSalesSerText = "售后服务";
+titleSerInspText = "抽检呈报";
+titleProductText = "编辑产品信息";
+
+mainButton1 ="门店拍照";
+mainButton2 ="陈列报修";
+mainButton3 ="活动问题";
+mainButton4 ="售后服务";
+mainButton5 ="抽检呈报";
+mainButton17 ="返回";
+
+
+//Button text
+btnMessageClose ="关 闭";
+btnLoginText = "登 录";
+btnChangePwdText = "修改密码";
+btnForgetPwdText = "忘记密码";
+btnPwdRuleText = "密码规则";
+btnSavePwdText = "记住密码";
+btnOKText = "确 定";
+btnDeleteText = "删 除";
+btnSubmitText = "提 交";
+btnCancelText = "取 消";
+btnCheckinText = "签到";
+btnNewStoreText = "新增门店";
+btnUploadText = "上传";
+btnBackText = "返回";
+btnSelectedText ="请选择";
+btnAddProductText ="增加产品列表";
+//Message text
+msgNoConnectNetError ="网络连接不可用";
+msgConnectNetError ="网络请求失败";
+NeedUpdateVersion= "系统已升级，请到App Store下载安装最新客户端";// "服务器已发布Mobile新版本，请尽快更新";
+msgSessionExpired= "您的登录认证已过期，请重新登录."; //Token验证码过期，需要重新登录获取
+
+
+msgOperationSuccess ="操作成功";
+msgUploadSuccess ="上传成功";
+msgUserLoginError ="用户名和密码不能为空";
+msgUserLoginFailed ="登录失败，请重新登录";
+msgUserNameEmpty ="请输入用户名";
+msgUserPwdEmpty ="请输入密码";
+msgStoreCodeEmpty ="请输入门店编码";
+msgUserPageError ="页面信息请填写完整";
+msgNewPwdError ="新密码不能和原密码相同";
+msgConfirmPwdError ="新密码和确认新密码不相同";
+
+msgForgetPwdMessage="请联系客服人员获取密码，电话：400 880 1515";
+msgPwdRuleMessage ="密码要求：至少7个字符，包含大小写字母和数字.";
+
+msgGPSStartError ="请开启手机定位功能";
+msgGetLocationError ="手机定位失败";
+
+
+msgStoreNameEmpty ="请输入门店名称";
+msgStoreAddressEmpty ="请输入门店地址";
+msgStorePhoneEmpty ="请输入门店电话";
+msgStoreRemarkEmpty ="请输入门店备注";
+
+msgStoreCheckinOutTime="目前已过门店签到上传期限";// Login Result OutTime Flag=1
+msgStoreCheckinIsHave="该门店在当前周期已经成功签到，无需再次签到了";//Store Status=88
+msgStoreCheckinUnNeeded="该门店未开启签到功能,无需签到";    //cheStore Status=-2
+
+
+msgPageEmptyError ="页面信息请填写完整";
+msgProductEmpty ="请添加产品";
+
+msgAlertMessageTitle ="提示信息";
+msgAlertChangeUser ="是否确定切换账号？";
+msgAlertLogout ="是否注销当前登录？";
+//Lable text
+lblStoreCodeText = "门店编码";
+lblStoreNameText = "门店名称";
+lblStoreAddressText = "门店地址";
+lblStorePhoneText = "门店电话";
+lblStoreRemarkText = "门店备注";
+
+lblUserNameText = "用户名";
+lblPwdText = "密码";
+lblUserNamelblText = "用户名:";
+lblPwdlblText = "密    码:";
+lblNewPwdText = "新密码";
+lblConfirmPwdText = "确认新密码";
+lblCheckInText = "Check in";
+lblLoadingText = "Loading...";
+
+lblSubCategoryText = "问题类目";
+lblCategoryText = "问题子类目";
+lblCategoryItemText = "问题分类";
+lblIssueRemarkText = "问题描述";
+lblIssueRemark2Text = "补充说明";
+lblIssuePhotoText = "添加照片";
+
+lblProdCodeText = "产品型号";
+lblProdSizeText = "产品尺码";
+lblProdNameText = "产品名称";
+
+lblIsDamageText = "是否原残";
+lblIsDressedText = "是否穿过";
+lblIsWashText = "是否洗涤";
+
+lblInspdeptNameText = "抽检部门";
+lblInspdept1Text = "工商政府抽检";
+lblInspdept2Text = "商场检查";
+
+lblIsTakeSampleText = "是否取走样品";
+lblIsNeedReportText = "是否需要质检报告";
+lblIsNeedDeclText = "是否需要产品报关单";
+
+
+
+
+

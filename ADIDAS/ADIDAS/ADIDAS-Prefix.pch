@@ -1,0 +1,47 @@
+//
+// Prefix header for all source files of the 'ADIDAS' target in the 'ADIDAS' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#import "HUD.h"
+#import "CacheManagement.h"
+#import "AES128Util.h"
+#import "MJExtension.h"
+#import "Masonry.h"
+#import "MJRefresh.h"
+#import "NSString+ReplaceString.h"
+
+#define kDEFAULT_DATE_TIME_FORMAT (@"yyyy-MM-dd HH:mm:ss")
+#define kDEFAULT_DATA_TIME_FORAMT_UPLOAD (@"yyyyMMddHHmmss")
+#define kDEFAULT_DATE_FORMAT (@"yyyy-MM-dd")
+#define kDEFAULT_DATE_FORMAT2 (@"yyyyMMdd")
+
+#define IsStrEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref)isEqualToString:@""]))
+
+#define ISKIDS (![[CacheManagement instance].dataSource isEqual:[NSNull null]]&&[[CacheManagement instance].dataSource containsString:@"KIDS"])
+#define ISFROMEHK (![[CacheManagement instance].dataSource isEqual:[NSNull null]]&&[[CacheManagement instance].dataSource containsString:@"HK"])
+
+#define SYSLanguage [CacheManagement instance].language
+#define Uploadstatu [CacheManagement instance].uploadstatu
+#define FromHistory [CacheManagement instance].isFromHistory
+#define CN 0
+#define EN 1
+#endif
+
+#define SINGLETON(classname)                            \
++ (classname *)sharedInstance{                          \
+static dispatch_once_t pred;                            \
+__strong static classname *shared##classname=nil;       \
+dispatch_once(&pred,^(void){                            \
+shared##classname=[[self alloc]init];                   \
+});                                                     \
+return shared##classname;                               \
+}
