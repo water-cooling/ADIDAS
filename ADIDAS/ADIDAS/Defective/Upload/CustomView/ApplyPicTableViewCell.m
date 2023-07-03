@@ -129,8 +129,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (self.imageArray) {
-        if (indexPath.row < self.imageArray.count) {
+      if (!IsStrEmpty([self.imageArray objectAtIndex:indexPath.row])) {
             if (self.bigBlock) {
                 self.bigBlock(indexPath.row);
             }
@@ -138,10 +137,9 @@
             if (self.pickBlock) {
                 self.pickBlock(indexPath.row);
             }
-            
-        }
+        
+        
     }
-    
     
     if (self.webUrlArray) {
         if (self.bigBlock) {

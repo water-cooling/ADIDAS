@@ -672,10 +672,13 @@
           
         }
     if ([[self GetLoginUser].MustPicture isEqualToString:@"Y"]) {
-        if (self.picArray.count < 2) {
-            [self showAlertWithDispear:@"请上传2张图片"];
-            return;
+        for (NSString * picStr in self.picArray) {
+            if (IsStrEmpty(picStr)) {
+                [self showAlertWithDispear:@"请上传2张图片"];
+                return;
+            }
         }
+        return;
     }
    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
