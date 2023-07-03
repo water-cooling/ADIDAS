@@ -44,15 +44,13 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (self.imageArray) {
-        if ([self.imageArray count] == 2) return 2 ;
-        
-        return 1 + [self.imageArray count] ;
+        return 2;
         
     }else{
         if(self.webUrlArray){
             return self.webUrlArray.count;
         }else{
-            return 1;
+            return 2;
         }
         
     }
@@ -71,17 +69,31 @@
         
         if (self.imageArray) {
             cell.bgView.hidden = NO;
-            if (indexPath.row < self.imageArray.count) {
+            if (IsStrEmpty([self.imageArray objectAtIndex:indexPath.row])) {
+                cell.bgView.hidden = YES;
+
+                if (indexPath.item == 0) {
+                    cell.goodImageView.image = [UIImage imageNamed:@"全景照片"];
+
+                }else{
+                    cell.goodImageView.image = [UIImage imageNamed:@"条形码照片"];
+                }
+             
+            }else{
                 UIImage *few = [[UIImage alloc] initWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[CommonUtil SysDocumentPath],[self.imageArray objectAtIndex:indexPath.row]]] ;
                 cell.goodImageView.image = few ;
-            }else{
-                cell.bgView.hidden = YES;
-                cell.goodImageView.image = [UIImage imageNamed:@"icon_shopping_addaddress"];
+           
                 
             }
         }else{
             cell.bgView.hidden = YES;
-            cell.goodImageView.image = [UIImage imageNamed:@"icon_shopping_addaddress"];
+            if (indexPath.item == 0) {
+                cell.goodImageView.image = [UIImage imageNamed:@"全景照片"];
+
+            }else{
+                cell.goodImageView.image = [UIImage imageNamed:@"条形码照片"];
+            }
+            
         }
         
         
@@ -124,7 +136,7 @@
             }
         }else{
             if (self.pickBlock) {
-                self.pickBlock();
+                self.pickBlock(indexPath.row);
             }
             
         }
