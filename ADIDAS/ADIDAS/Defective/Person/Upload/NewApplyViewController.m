@@ -800,9 +800,9 @@
         }else if (model.cellType == CreateTablePicCell){
             ApplyPicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplyPicTableViewCell" forIndexPath:indexPath];
                 cell.imageArray = self.picArray;
-                cell.pickBlock = ^{
+            cell.pickBlock = ^(NSInteger index) {
                     [HeadImageManager alertUploadHeaderImageActionSheet:weakSelf imageSuccess:^(UIImage *image) {
-                        [weakSelf imagePickerController:image];
+                        [weakSelf imagePickerController:image addIndex:index];
                     }];
                 };
                 cell.deleteBlock = ^(NSInteger index) {
@@ -840,7 +840,7 @@
 }
 
 
-- (void)imagePickerController:(UIImage *)image {
+- (void)imagePickerController:(UIImage *)image addIndex:(NSInteger)index {
     
     [self ShowSVProgressHUD];
     UIImageOrientation imageOrientation = image.imageOrientation;
@@ -867,7 +867,12 @@
         BOOL res = [UIImageJPEGRepresentation(image, 0.4) writeToFile:[NSString stringWithFormat:@"%@/%@.jpg",picPath,imageName] atomically:YES];
             [self DismissSVProgressHUD];
             if (res) {
-                [self.picArray addObject:[NSString stringWithFormat:@"%@/%@.jpg",self.folderName,imageName]];
+                if (index == 1) {
+                    self.picArray[1] = [NSString stringWithFormat:@"%@/%@.jpg",self.folderName,imageName];
+                    
+                }else{
+                    self.picArray[0] = [NSString stringWithFormat:@"%@/%@.jpg",self.folderName,imageName];
+                }
                 
                 [self.tableView reloadData];
             }
@@ -894,10 +899,15 @@
             [fileMannager removeItemAtPath:[NSString stringWithFormat:@"%@/%@",[CommonUtil SysDocumentPath],[self.picArray objectAtIndex:index]] error:nil];
         }
         
-       
+        
     }
-
-    [self.picArray removeObjectAtIndex:index] ;
+    
+    if (index == 1) {
+        self.picArray[1] = @"";
+        
+    }else{
+        self.picArray[0] = @"";
+    }
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-2 inSection:0];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationFade];
     
@@ -1686,7 +1696,7 @@
 
 - (NSMutableArray *)picArray{
     if (!_picArray) {
-        _picArray = [NSMutableArray array];
+        _picArray = [[NSMutableArray alloc]initWithObjects:@"",@"", nil];
     }
     return _picArray;
 }

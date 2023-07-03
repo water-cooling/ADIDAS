@@ -168,6 +168,7 @@
 
 typedef void(^ImageDeleteBlock) (NSInteger index);
 typedef void(^ImageBigBlock) (NSInteger index);
+typedef void(^ImagePickBlock) (NSInteger index);
 
 @interface CommonDefine : NSObject
 

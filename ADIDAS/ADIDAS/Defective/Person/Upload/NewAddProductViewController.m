@@ -141,6 +141,7 @@
     CreatTableModel *model4 = [CreatTableModel new];
     model4.cellType = CreateTableTFCell;
     model4.title = @"箱号：";
+    model4.isNumerKeyBoard = YES;
     model4.placeholder = @"请输入箱号";
     model4.key = @"CartonNumber";
     [self.dataArr addObject:model4];
@@ -340,7 +341,7 @@
             }else if ([titleArr[index] isEqualToString:@"完好"]){
                 [weakSelf.dataArr removeObject:self.templeModel];
             }else if ([titleArr[index] isEqualToString:@"鞋盒(不含鞋盒上的贴纸)"]){
-                UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"请将原鞋盒上的贴纸撕下，贴至补发的新鞋盒上使用" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+                UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"请将原鞋盒上的贴纸撕下，贴至补发的新鞋盒上使用" message:@"" preferredStyle:UIAlertControllerStyleAlert];
                
                     UIAlertAction *ac1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     }];
