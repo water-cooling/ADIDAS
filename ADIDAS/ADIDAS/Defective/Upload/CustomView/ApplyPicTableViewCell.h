@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSArray *imageArray ;
 @property (strong, nonatomic) NSArray *webUrlArray ;
 
-@property (nonatomic,copy)ImagePickBlock pickBlock;
+@property (nonatomic,copy)dispatch_block_t pickBlock;
 
 @property (nonatomic,copy)ImageBigBlock bigBlock;
 
