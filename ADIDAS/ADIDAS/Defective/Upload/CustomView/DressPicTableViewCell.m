@@ -76,12 +76,12 @@
                 cell.goodImageView.image = few ;
             }else{
                 cell.bgView.hidden = YES;
-                cell.goodImageView.image = [UIImage imageNamed:@"icon_shopping_addaddress"];
+                cell.goodImageView.image = [UIImage imageNamed:@"吊牌配件"];
                 
             }
         }else{
             cell.bgView.hidden = YES;
-            cell.goodImageView.image = [UIImage imageNamed:@"icon_shopping_addaddress"];
+            cell.goodImageView.image = [UIImage imageNamed:@"吊牌配件"];
         }
         
         
