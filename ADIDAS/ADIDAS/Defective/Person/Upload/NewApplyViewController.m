@@ -100,10 +100,9 @@
     // Do any additional setup after loading the view from its nib.
 }
 
--(void)keyboardWillShow:(NSNotification *)note
-{
+-(void)keyboardWillShow:(NSNotification *)note{
     CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, keyBoardRect.size.height, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-keyBoardRect.size.height-StatusBarAndNavigationBarHeight, 0, 0, 0);
 }
 #pragma mark 键盘消失
 -(void)keyboardWillHide:(NSNotification *)note{
@@ -202,7 +201,6 @@
 
     model10.key = @"CaseReason";
     [self.dataArray addObject:model10];
-    [self creatNormalStickerShoesData:YES];
 
     [self.tableView reloadData];
 }
@@ -817,7 +815,7 @@
                     ImageDetailViewController *controller = [[ImageDetailViewController alloc] initWithNibName:@"ImageDetailViewController" bundle:nil];
                     controller.DeleteDelegate = weakSelf ;
                     controller.index = index ;
-                    controller.imageData = [weakSelf.picArray objectAtIndex:indexPath.row] ;
+                    controller.imageData = [weakSelf.picArray objectAtIndex:index] ;
                    
                     controller.modalPresentationStyle = UIModalPresentationFullScreen;
                     [weakSelf presentViewController:controller animated:NO completion:nil];

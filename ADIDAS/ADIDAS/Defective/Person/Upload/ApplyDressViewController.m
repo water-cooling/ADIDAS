@@ -82,7 +82,7 @@
 -(void)keyboardWillShow:(NSNotification *)note
 {
     CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, keyBoardRect.size.height, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-keyBoardRect.size.height-StatusBarAndNavigationBarHeight, 0, 0, 0);
 }
 #pragma mark 键盘消失
 -(void)keyboardWillHide:(NSNotification *)note
