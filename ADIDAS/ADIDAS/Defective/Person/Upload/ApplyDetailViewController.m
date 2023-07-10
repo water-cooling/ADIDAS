@@ -51,7 +51,6 @@
     [self.navigationItem setHidesBackButton:YES animated:NO];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_cn.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
 
-
     [self.view addSubview:self.listTableView];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
@@ -198,7 +197,6 @@
     model12.key = @"CaseReason";
     [self.dataArray addObject:model12];
     
-
     
 }
 
@@ -248,8 +246,10 @@
             return cell;
         }else if (model.cellType == CreateTableReMarkCell){
             DetailAnswerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailAnswerTableViewCell" forIndexPath:indexPath];
-            cell.textView.text = self.saveDic[@"IsRemark"];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            if (self.saveDic[@"DealWith"]) {
+                cell.textView.text = self.saveDic[@"DealWith"];
+            }
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
             return cell;
         }else if (model.cellType == CreateTableReMarkArticleNoCell){

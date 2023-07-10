@@ -77,10 +77,9 @@
     [self.listTableView addGestureRecognizer:tableViewGesture];
 }
 
--(void)keyboardWillShow:(NSNotification *)note
-{
+-(void)keyboardWillShow:(NSNotification *)note{
     CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.listTableView.contentInset = UIEdgeInsetsMake(0, 0, keyBoardRect.size.height, 0);
+    self.listTableView.contentInset = UIEdgeInsetsMake(0,0,keyBoardRect.size.height,0);
 }
 #pragma mark 键盘消失
 -(void)keyboardWillHide:(NSNotification *)note
@@ -121,6 +120,8 @@
     model1.cellType = CreateTableTFCell;
     model1.title = @"补寄地址:";
     model1.placeholder = @"请输入补寄地址";
+    [self.saveDic setValue:[self GetLoginUser].Address forKey:@"Address"];
+    model1.value = [self GetLoginUser].Address;
     model1.key = @"Address";
     [self.dataArr addObject:model1];
     
@@ -128,6 +129,8 @@
     model2.cellType = CreateTableTFCell;
     model2.title = @"联系人姓名：";
     model2.placeholder = @"请输入联系人姓名";
+    model2.value = [self GetLoginUser].LinkMan;
+    [self.saveDic setValue:[self GetLoginUser].Address forKey:@"ContacePerson"];
     model2.key = @"ContacePerson";
     [self.dataArr addObject:model2];
     
@@ -135,6 +138,8 @@
     model3.cellType = CreateTableTFCell;
     model3.title = @"电话：";
     model3.placeholder = @"请输入电话";
+    model3.value = [self GetLoginUser].LinkTel;
+    [self.saveDic setValue:[self GetLoginUser].Address forKey:@"ContaceNumber"];
     model3.key = @"ContaceNumber";
     [self.dataArr addObject:model3];
     
@@ -222,7 +227,7 @@
             return 50;
             break;
         case CreateTablePicCell:
-            return (PHONE_WIDTH-60)/2+90;
+            return (PHONE_WIDTH-40)/3*2+90;
         default:
             break;
     }

@@ -12,15 +12,16 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    UIView * leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 18)];
-    UIImageView * image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"productdetail_down.png"]];
-    image.frame = CGRectMake(2, 2, 15, 15);
-    [leftView addSubview:image];
-    self.inputTextView.delegate = self;
+    
+    UIButton * downBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [downBtn setImage:[UIImage imageNamed:@"productdetail_down.png"] forState:0];
+    downBtn.frame = CGRectMake(0, 0, 30, 30);
     self.inputTextView.layer.cornerRadius = 5;
+    [downBtn addTarget:self action:@selector(touchAction) forControlEvents:UIControlEventTouchUpInside];
     self.inputTextView.layer.borderColor = [[CommonUtil colorWithHexString:@"#F5F5F5"] CGColor];
     self.inputTextView.layer.borderWidth =1;
-    self.inputTextView.rightView = leftView;
+    self.inputTextView.rightView = downBtn;
+    self.inputTextView.delegate = self;
     self.inputTextView.rightViewMode =  UITextFieldViewModeAlways;
     // Initialization code
 }
@@ -30,6 +31,12 @@
         self.block();
     }
     return NO;
+}
+
+-(void)touchAction{
+    if (self.block) {
+        self.block();
+    }
 }
 
 -(void)setDict:(NSMutableDictionary *)dict{

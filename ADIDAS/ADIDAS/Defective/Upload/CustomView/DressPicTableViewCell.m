@@ -93,7 +93,7 @@
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat width = (PHONE_WIDTH-60)/4;
+    CGFloat width = (PHONE_WIDTH-40)/3;
     return CGSizeMake(width,width) ;
 }
 

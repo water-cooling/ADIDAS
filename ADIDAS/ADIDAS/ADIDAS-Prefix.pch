@@ -17,6 +17,7 @@
 #import "MJExtension.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
+#import "CommonDefine.h"
 #import "NSString+ReplaceString.h"
 
 #define kDEFAULT_DATE_TIME_FORMAT (@"yyyy-MM-dd HH:mm:ss")

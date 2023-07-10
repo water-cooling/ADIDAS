@@ -169,6 +169,7 @@
 typedef void(^ImageDeleteBlock) (NSInteger index);
 typedef void(^ImageBigBlock) (NSInteger index);
 typedef void(^ImagePickBlock) (NSInteger index);
+typedef void(^TextFieldValueChange)(NSString* _Nullable text);
 
 @interface CommonDefine : NSObject
 

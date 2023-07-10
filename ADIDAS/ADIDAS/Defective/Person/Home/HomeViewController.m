@@ -38,7 +38,10 @@
     self.searchBGView.layer.masksToBounds = YES ;
     self.searchTextField.backgroundColor = [CommonUtil colorWithHexString:@"#f1f2f3"] ;
     filterType = 0;
-    NSArray * dataArr = @[@"全部",@"已提交",@"处理中",@"已回复",@"已驳回"];
+    
+    NSArray * dataArr = @[@"全部",@"已提交",@"处理中",@"已回复"];
+
+//    NSArray * dataArr = @[@"全部",@"已提交",@"处理中",@"已回复",@"已驳回"];
     // 传递数组，默认选中第2个
     [self.pageMuenu setItems:dataArr selectedItemIndex:0];
     self.searchTextField.delegate = self ;
@@ -82,7 +85,7 @@
                 secondArray = [dict valueForKey:@"1"];
                 thirdArray = [dict valueForKey:@"2"];
                 fourthArray = [dict valueForKey:@"3"];
-                fifthArray= [dict valueForKey:@"4"];
+//                fifthArray= [dict valueForKey:@"4"];
 
             }
                 if (filterType == 0) {
@@ -94,7 +97,7 @@
                 }else if (filterType == 3){
                     [self.fouTableView reloadData] ;
                 }else{
-                    [self.fifTableView reloadData] ;
+//                    [self.fifTableView reloadData] ;
                 }
             [self.listScrollView setContentOffset: CGPointMake(PHONE_WIDTH*filterType, 0)];
         }else {
@@ -214,7 +217,7 @@
     
     if (tableView == self.fouTableView) return [fourthArray count] ;
     
-    if (tableView == self.fifTableView) return [fifthArray count] ;
+//    if (tableView == self.fifTableView) return [fifthArray count] ;
 
     
     return 0 ;
@@ -254,10 +257,10 @@
         dic = [fourthArray objectAtIndex:indexPath.section];
     }
     
-    if (tableView == self.fifTableView) {
-    
-        dic = [fifthArray objectAtIndex:indexPath.section];
-    }
+//    if (tableView == self.fifTableView) {
+//
+//        dic = [fifthArray objectAtIndex:indexPath.section];
+//    }
     
        
     if (dic&&![dic isEqual:[NSNull null]]) {
@@ -323,9 +326,9 @@
         dic = [fourthArray objectAtIndex:indexPath.section];
     }
     
-    if (tableView == self.fifTableView) {
-        dic = [fifthArray objectAtIndex:indexPath.section];
-    }
+//    if (tableView == self.fifTableView) {
+//        dic = [fifthArray objectAtIndex:indexPath.section];
+//    }
     if (dic) {
         if ([[NSString stringWithFormat:@"%@",[dic valueForKey:@"IsNew"]] isEqualToString:@"1"]) {
             [self updateRead:dic[@"CaseNumber"]];
@@ -436,15 +439,15 @@
     self.fouTableView.delegate = self ;
     [self.fouTableView registerNib:[UINib nibWithNibName:@"GoodDetailCustomCell" bundle:nil] forCellReuseIdentifier:@"GoodDetailCustomCell"];
 
-    self.fifTableView.dataSource = self ;
-    self.fifTableView.delegate = self ;
-    [self.fifTableView registerNib:[UINib nibWithNibName:@"GoodDetailCustomCell" bundle:nil] forCellReuseIdentifier:@"GoodDetailCustomCell"];
+//    self.fifTableView.dataSource = self ;
+//    self.fifTableView.delegate = self ;
+//    [self.fifTableView registerNib:[UINib nibWithNibName:@"GoodDetailCustomCell" bundle:nil] forCellReuseIdentifier:@"GoodDetailCustomCell"];
 
     firstArray = [NSArray array] ;
     secondArray = [NSArray array] ;
     thirdArray = [NSArray array] ;
     fourthArray = [NSArray array] ;
-    fifthArray = [NSArray array] ;
+//    fifthArray = [NSArray array] ;
    
 }
 

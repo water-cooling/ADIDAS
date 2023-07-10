@@ -11,7 +11,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.textView.delegate = self ;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldValueChanged:) name:UITextFieldTextDidChangeNotification object:nil];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,17 +21,17 @@
     // Configure the view for the selected state
 }
 
-- (void)textViewDidChange:(UITextView *)textView {
-    self.placeHodleLab.hidden = ![textView.text isEqualToString:@""] ;
+- (void)textFieldValueChanged:(NSNotification *)note{
     if (self.textBlock) {
-        self.textBlock(textView.text);
+        self.textBlock(self.textView.text);
     }
 }
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
 
-    if ([text isEqualToString:@"\n"]) {
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+
+    if ([string isEqualToString:@"\n"]) {
         
-        [textView resignFirstResponder] ;
+        [textField resignFirstResponder] ;
         
         return NO ;
     }
@@ -42,14 +43,13 @@
     NSString *str5 = @"\"";
     NSString *str6 = @">" ;
     
-    return !([text isEqualToString:str1]||[text isEqualToString:str2]||[text isEqualToString:str3]||
-            [text isEqualToString:str4]||[text isEqualToString:str5]||[text isEqualToString:str6]) ;
+    return !([string isEqualToString:str1]||[string isEqualToString:str2]||[string isEqualToString:str3]||
+            [string isEqualToString:str4]||[string isEqualToString:str5]||[string isEqualToString:str6]) ;
 }
 
 
 - (void)dealloc {
     [_textView release];
-    [_placeHodleLab release];
     [_titleLab release];
     [super dealloc];
 }

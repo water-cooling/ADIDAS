@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CreatTableModel.h"
-typedef void(^TextFieldValueChange)(NSString* _Nullable text);
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TextFieldTableViewCell : UITableViewCell<UITextFieldDelegate>

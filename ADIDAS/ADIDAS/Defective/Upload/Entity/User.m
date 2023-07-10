@@ -23,7 +23,23 @@
         }
         else self.UserAccount = @"" ;
         
+        if ([dic valueForKey:@"LinkMan"] && ![[dic valueForKey:@"LinkMan"] isEqual:[NSNull null]]) {
+            
+            self.LinkMan = [[NSString stringWithFormat:@"%@",[dic valueForKey:@"LinkMan"]] uppercaseString] ;
+        }
+        else self.LinkMan = @"" ;
         
+        if ([dic valueForKey:@"LinkTel"] && ![[dic valueForKey:@"LinkTel"] isEqual:[NSNull null]]) {
+            
+            self.LinkTel = [[NSString stringWithFormat:@"%@",[dic valueForKey:@"LinkTel"]] uppercaseString] ;
+        }
+        else self.LinkTel = @"" ;
+        
+        if ([dic valueForKey:@"Address"] && ![[dic valueForKey:@"Address"] isEqual:[NSNull null]]) {
+            
+            self.Address = [[NSString stringWithFormat:@"%@",[dic valueForKey:@"Address"]] uppercaseString] ;
+        }
+        else self.Address = @"" ;
         
         
         if ([dic valueForKey:@"UserNameCN"] && ![[dic valueForKey:@"UserNameCN"] isEqual:[NSNull null]]) {

@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "CreatTableModel.h"
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^TextFieldValueChange)(NSString* _Nullable text);
 
 @interface CreatTFPointDownTableViewCell : UITableViewCell
 @property (retain, nonatomic) IBOutlet UILabel *titleLab;

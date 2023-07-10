@@ -102,7 +102,9 @@
 
 -(void)keyboardWillShow:(NSNotification *)note{
     CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.tableView.contentInset = UIEdgeInsetsMake(-keyBoardRect.size.height-StatusBarAndNavigationBarHeight, 0, 0, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0,0,keyBoardRect.size.height,0);
+
+//    self.tableView.contentInset = UIEdgeInsetsMake(-keyBoardRect.size.height-StatusBarAndNavigationBarHeight, 0, 0, 0);
 }
 #pragma mark 键盘消失
 -(void)keyboardWillHide:(NSNotification *)note{
@@ -733,6 +735,8 @@
         if (model.cellType == CreateTableTFCell) {
             TextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextFieldTableViewCell" forIndexPath:indexPath];
             cell.creatTableModel = model;
+            cell.dict = self.saveDic;
+
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.textBlock = ^(NSString * _Nullable text) {
                 [weakSelf.saveDic setValue:text forKey:model.key];

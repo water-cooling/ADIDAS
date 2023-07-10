@@ -82,7 +82,7 @@
 
 -(void)keyboardWillShow:(NSNotification *)note{
     CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.tableView.contentInset = UIEdgeInsetsMake(-keyBoardRect.size.height-StatusBarAndNavigationBarHeight, 0, 0, 0);
+    _tableView.contentInset = UIEdgeInsetsMake(0,0,keyBoardRect.size.height,0);
 }
 #pragma mark 键盘消失
 -(void)keyboardWillHide:(NSNotification *)note
@@ -254,7 +254,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
     CreatTableModel *model = self.dataArray[indexPath.row];
     switch (model.cellType) {
         case CreateTablePicCell:
-            return (PHONE_WIDTH-60)/4+103;
+            return (PHONE_WIDTH-60)/3+103;
         case CreateTableReMarkCell:
             return 125;
         default:

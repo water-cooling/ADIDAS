@@ -17,12 +17,11 @@
 -(void)setDict:(NSDictionary *)dict{
     _dict = dict;
     if (dict) {
-        if (dict[self.creatTableModel.key]) {
             if ([self.creatTableModel.key isEqualToString:@"ShippingNo"]) {
                 NSString * temple = @"";
                 if (dict[@"listEhCaseShippingNo"] && [dict[@"listEhCaseShippingNo"] isKindOfClass:[NSArray class]]) {
                     for (NSDictionary * shipDic in dict[@"listEhCaseShippingNo"]) {
-                        [temple stringByAppendingPathComponent:shipDic[@"ShippingNo"]];
+                        temple = [temple stringByAppendingPathComponent:shipDic[@"ShippingNo"]];
                     }
                     self.DesTitleLab.text = temple;
 
@@ -31,12 +30,11 @@
                 }
                 
             }else{
-                self.DesTitleLab.text = dict[self.creatTableModel.key];
+                self.DesTitleLab.text = dict[self.creatTableModel.key] ?:@"";
             }
         }else{
             self.DesTitleLab.text = @"";
         }
-    }
    
 }
 

@@ -32,6 +32,11 @@
 
 @property (strong, nonatomic) NSString *PostAddress;
 
+@property(nonatomic,strong) NSString * LinkMan;
+@property(nonatomic,strong) NSString * LinkTel;
+@property(nonatomic,strong) NSString * Address;
+
+
 - (id)initWith:(NSDictionary *)dic ;
 
 @end

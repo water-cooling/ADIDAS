@@ -6,12 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^TextFieldValueChange)(NSString* _Nullable text);
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RemarkTableViewCell : UITableViewCell<UITextViewDelegate>
-@property (retain, nonatomic) IBOutlet UITextView *textView;
-@property (retain, nonatomic) IBOutlet UILabel *placeHodleLab;
+@interface RemarkTableViewCell : UITableViewCell<UITextFieldDelegate>
+@property (retain, nonatomic) IBOutlet UITextField *textView;
 @property (nonatomic,copy)TextFieldValueChange textBlock;
 @property (retain, nonatomic) IBOutlet UILabel *titleLab;
 
