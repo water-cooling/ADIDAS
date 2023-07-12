@@ -16,7 +16,6 @@
 #import "ComponentViewController.h"
 #import "ApplyDressViewController.h"
 #import "NewAddProductViewController.h"
-#import "ComponentViewController.h"
 @interface UploadViewController ()<UIAlertViewDelegate>
 
 @end
@@ -45,7 +44,7 @@
     
     if (!historyArray || [historyArray count] == 0) {
         
-        ComponentViewController *vc = [[ComponentViewController alloc] init] ;
+        NewAddProductViewController *vc = [[NewAddProductViewController alloc] init] ;
         vc.hidesBottomBarWhenPushed = YES ;
         [self.navigationController pushViewController:vc animated:NO] ;
    
