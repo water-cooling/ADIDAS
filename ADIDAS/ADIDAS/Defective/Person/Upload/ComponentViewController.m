@@ -129,16 +129,16 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
     
     CreatTableModel *model1 = [CreatTableModel new];
     model1.cellType = CreateTablePointDownCell;
-    model1.title = @"工厂代码:";
+    model1.title = @"工厂代码：";
     model1.placeholder = @"请选择";
-    model1.pointTitle = @"鞋舌唛上的工厂代号示意图";
+    model1.pointTitle = @"工厂代号示意图";
     model1.pointDesTitle = @"请参照吊牌信息填写";
     model1.key = @"FactoryCode";
     [self.dataArray addObject:model1];
     
     CreatTableModel *model2 = [CreatTableModel new];
     model2.cellType = CreateTableTFCell;
-    model2.title = @"货号";
+    model2.title = @"货号：";
     model2.placeholder = @"请输入货号";
     model2.key = @"ArticleNo";
     [self.dataArray addObject:model2];
@@ -161,16 +161,16 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
     
     CreatTableModel *model5 = [CreatTableModel new];
     model5.cellType = CreateTableDownCell;
-    model5.title = @"尺码/号型";
+    model5.title = @"尺码/号型：";
     model5.placeholder = @"请输入尺码";
     model5.key = @"ArticleSize";
     [self.dataArray addObject:model5];
     
     CreatTableModel *model6 = [CreatTableModel new];
     model6.cellType = CreateTablePointDownCell;
-    model6.title = @"安全类型：";
+    model6.title = @"安全类别：";
     model6.placeholder = @"请选择";
-    model6.pointTitle = @"安全类型示意图";
+    model6.pointTitle = @"安全类别示意图";
     model6.pointDesTitle = @"请参照吊牌信息填写";
     model6.key = @"SecurityCategory";
     [self.dataArray addObject:model6];
@@ -194,7 +194,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
     [self.dataArray addObject:model8];
     
     CreatTableModel *model9 = [CreatTableModel new];
-    model9.cellType = CreateTablePoinTFCell;
+    model9.cellType = CreateTableTFCell;
     model9.title = @"数量：";
     model9.placeholder = @"请输入数量";
     model9.key = @"Number";
@@ -202,16 +202,20 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
     
     CreatTableModel *model10 = [CreatTableModel new];
     model10.cellType = CreateTablePoinTFCell;
-    model10.title = @"材料成分";
+    model10.title = @"材料成分：";
     model10.placeholder = @"请选择";
+    model10.pointDesTitle = @"请参照吊牌信息填写";
+
     model10.key = @"MaterialComposition";
     [self.dataArray addObject:model10];
     
     CreatTableModel *model11 = [CreatTableModel new];
     model11.cellType = CreateTablePoinTFCell;
-    model11.title = @"注意/注意事项";
+    model11.title = @"注意/注意事项：";
     model11.placeholder = @"请选择";
     model11.key = @"Attention";
+    model11.pointDesTitle = @"请参照吊牌信息填写";
+
     [self.dataArray addObject:model11];
     
     CreatTableModel *model12 = [CreatTableModel new];
@@ -348,7 +352,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
             };
           
             cell.pointBlock = ^{
-                [weakSelf.pointView configTitle:model.title destitlte:model.placeholder pic:@""];
+                [weakSelf getSamplePicture:model];
             };
             
             return cell;
@@ -515,7 +519,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
         if (responseObject && [[responseObject objectForKey:@"Code"] integerValue] == 200) {
             NSString * dict = responseObject[@"Msg"];
             if (dict) {
-                self.channelArr = [dict JSONValue][@"APP"];
+                self.channelArr = [dict JSONValue][@"ACC"];
                 if (self.channelArr) {
                     CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.channelArr title:@"请选择渠道"];
                     sheetView.block = ^(NSInteger index) {
@@ -578,7 +582,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
             
             NSString * dict = responseObject[@"Msg"];
             if (dict) {
-                self.factoryArray = [dict JSONValue][@"APP"];
+                self.factoryArray = [dict JSONValue][@"ACC"];
                 if (self.factoryArray) {
                     CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.factoryArray title:@"请选择工厂"];
                     sheetView.block = ^(NSInteger index) {
@@ -640,7 +644,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
             
             NSString * dict = responseObject[@"Msg"];
             if (dict) {
-                self.modelNameArray = [dict JSONValue][@"APP"];
+                self.modelNameArray = [dict JSONValue][@"ACC"];
                 if (self.modelNameArray) {
                     CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.modelNameArray title:@"请选择品名"];
                     sheetView.block = ^(NSInteger index) {
@@ -703,7 +707,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
             
             NSString * dict = responseObject[@"Msg"];
             if (dict) {
-                self.securityCategoryArray = [dict JSONValue][@"APP"];
+                self.securityCategoryArray = [dict JSONValue][@"ACC"];
                 if (self.securityCategoryArray) {
                     CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.securityCategoryArray title:@"请选择安全类别"];
                     sheetView.block = ^(NSInteger index) {
@@ -766,7 +770,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
             
             NSString * dict = responseObject[@"Msg"];
             if (dict) {
-                self.ExecutiveArr = [dict JSONValue][@"APP"];
+                self.ExecutiveArr = [dict JSONValue][@"ACC"];
                 if (self.ExecutiveArr) {
                     CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.ExecutiveArr title:@"请选择标准"];
                     sheetView.block = ^(NSInteger index) {
@@ -830,7 +834,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
             
             NSString * dict = responseObject[@"Msg"];
             if (dict) {
-                self.articleGradeeArr = [dict JSONValue][@"APP"];
+                self.articleGradeeArr = [dict JSONValue][@"ACC"];
                 if (self.articleGradeeArr) {
                     CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.articleGradeeArr title:@"请选择标准"];
                     sheetView.block = ^(NSInteger index) {
@@ -882,7 +886,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
             
             NSString * dict = responseObject[@"Msg"];
             if (dict) {
-                self.sampleArr = [dict JSONValue][@"APP"];
+                self.sampleArr = [dict JSONValue][@"ACC"];
                 if (self.sampleArr) {
                     [self showPoint:model];
                 }
@@ -915,7 +919,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
    
     if ([model.key isEqualToString:@"PasterEancode"]) {
                 for (NSDictionary * dic in self.sampleArr) {
-                    if ([dic[@"SampleType"] isEqualToString:@"PasterEancode"]) {
+                    if ([dic[@"SampleType"] isEqualToString:@"PasterNumber"]) {
                         [self.pointView configTitle:model.pointTitle destitlte:model.pointDesTitle pic:dic[@"PictureUrl"]];
                     return;
                 }
@@ -923,7 +927,7 @@ NSString *str = [formatter stringFromDate:[NSDate date]];
         }
     if ([model.key isEqualToString:@"ModelName"]) {
                 for (NSDictionary * dic in self.sampleArr) {
-                    if ([dic[@"SampleType"] isEqualToString:@"ModelName"]) {
+                    if ([dic[@"SampleType"] isEqualToString:@"ArticleName"]) {
                         [self.pointView configTitle:model.pointTitle destitlte:model.pointDesTitle pic:dic[@"PictureUrl"]];
                     return;
                 }

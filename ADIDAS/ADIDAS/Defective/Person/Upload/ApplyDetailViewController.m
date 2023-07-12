@@ -110,7 +110,7 @@
 - (void)creatData{
     CreatTableModel *model1 = [CreatTableModel new];
     model1.cellType = CreateTableTitleShowCell;
-    model1.title = @"补寄地址:";
+    model1.title = @"补寄地址：";
     model1.placeholder = @"请输入补寄地址";
     model1.key = @"AddressCn";
     [self.dataArray addObject:model1];
@@ -145,7 +145,7 @@
     
     self.templeModel = [CreatTableModel new];
     self.templeModel.cellType = CreateTableTitleShowCell;
-    self.templeModel.title = @"运单是否已备注破损";
+    self.templeModel.title = @"运单是否已备注破损：";
     self.templeModel.placeholder = @"请选择备注类别";
     self.templeModel.key = @"IsRemark";
     
@@ -158,14 +158,14 @@
     
     CreatTableModel *model7 = [CreatTableModel new];
     model7.cellType = CreateTableTitleShowCell;
-    model7.title = @"品种";
-    model7.placeholder = @"请选择品种";
+    model7.title = @"品类：";
+    model7.placeholder = @"请选择品类";
     model7.key = @"Division";
     [self.dataArray addObject:model7];
     
     CreatTableModel *model8 = [CreatTableModel new];
     model8.cellType = CreateTableTitleShowCell;
-    model8.title = @"补发类别";
+    model8.title = @"补发类别：";
     model8.placeholder = @"请选择补发类别";
     model8.key = @"CaseCategory";
     [self.dataArray addObject:model8];
@@ -179,7 +179,7 @@
     
     CreatTableModel *model10 = [CreatTableModel new];
     model10.cellType = CreateTableReMarkArticleNoCell;
-    model10.title = @"货号";
+    model10.title = @"货号：";
     model10.placeholder = @"";
     model10.key = @"";
     [self.dataArray addObject:model10];
@@ -209,7 +209,7 @@
 
     switch (model.cellType) {
         case CreateTableTitleShowCell:
-            return 50;
+            return UITableViewAutomaticDimension;
             break;
         case CreateTableReMarkCell:
             return 125;
@@ -246,9 +246,7 @@
             return cell;
         }else if (model.cellType == CreateTableReMarkCell){
             DetailAnswerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DetailAnswerTableViewCell" forIndexPath:indexPath];
-            if (self.saveDic[@"DealWith"]) {
-                cell.textView.text = self.saveDic[@"DealWith"];
-            }
+            cell.textView.text = self.saveDic[@"DealWith"] ?:@"";
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
             return cell;
@@ -257,7 +255,7 @@
                 cell.creatTableModel = model;
             cell.block = ^{
                 ArticleNoDetailViewController * detail = [ArticleNoDetailViewController new];
-                detail.title = weakSelf.saveDic[@"CaseNumber"];
+                detail.title = weakSelf.saveDic[@"CartonNumber"];
                 detail.time = weakSelf.saveDic[@"CaseDate"];
                 if ([weakSelf.saveDic[@"Division"] isEqualToString:@"APP"]) {
                     detail.detailType = NewDetailDress;

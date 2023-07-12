@@ -100,14 +100,14 @@
     model1.cellType = CreateTablePointDownCell;
     model1.title = @"工厂代码:";
     model1.placeholder = @"请选择";
-    model1.pointTitle = @"鞋舌唛上的工厂代号示意图";
+    model1.pointTitle = @"工厂代码示意图";
     model1.pointDesTitle = @"请参照吊牌信息填写";
     model1.key = @"FactoryCode";
     [self.dataArray addObject:model1];
     
     CreatTableModel *model2 = [CreatTableModel new];
     model2.cellType = CreateTableTFCell;
-    model2.title = @"货号";
+    model2.title = @"货号：";
     model2.placeholder = @"请输入货号";
     model2.key = @"ArticleNo";
     [self.dataArray addObject:model2];
@@ -130,16 +130,16 @@
     
     CreatTableModel *model5 = [CreatTableModel new];
     model5.cellType = CreateTableTFCell;
-    model5.title = @"尺码";
+    model5.title = @"尺码：";
     model5.placeholder = @"请输入尺码";
     model5.key = @"ArticleSize";
     [self.dataArray addObject:model5];
     
     CreatTableModel *model6 = [CreatTableModel new];
     model6.cellType = CreateTablePointDownCell;
-    model6.title = @"安全类型：";
+    model6.title = @"安全类别：";
     model6.placeholder = @"请选择";
-    model6.pointTitle = @"安全类型示意图";
+    model6.pointTitle = @"安全类别示意图";
     model6.pointDesTitle = @"请参照吊牌信息填写";
     model6.key = @"SecurityCategory";
     [self.dataArray addObject:model6];
@@ -167,11 +167,11 @@
     model9.title = @"数量：";
     model9.placeholder = @"请输入数量";
     model9.key = @"Number";
-    [self.dataArray addObject:model8];
+    [self.dataArray addObject:model9];
     
     CreatTableModel *model10 = [CreatTableModel new];
     model10.cellType = CreateTablePoinTFCell;
-    model10.title = @"条形码编号";
+    model10.title = @"条形码编号：";
     model10.placeholder = @"请输入编号";
     model10.pointTitle = @"条形码示意图";
     model10.pointDesTitle = @"请参照吊牌信息填写";
@@ -302,7 +302,7 @@
             };
           
             cell.pointBlock = ^{
-                [weakSelf.pointView configTitle:model.title destitlte:model.placeholder pic:@""];
+                [weakSelf getSamplePicture:model];
             };
             
             return cell;
@@ -879,7 +879,7 @@
    
     if ([model.key isEqualToString:@"PasterEancode"]) {
                 for (NSDictionary * dic in self.sampleArr) {
-                    if ([dic[@"SampleType"] isEqualToString:@"PasterEancode"]) {
+                    if ([dic[@"SampleType"] isEqualToString:@"PasterNumber"]) {
                         [self.pointView configTitle:model.pointTitle destitlte:model.pointDesTitle pic:dic[@"PictureUrl"]];
                     return;
                 }
@@ -887,7 +887,7 @@
         }
     if ([model.key isEqualToString:@"ModelName"]) {
                 for (NSDictionary * dic in self.sampleArr) {
-                    if ([dic[@"SampleType"] isEqualToString:@"ModelName"]) {
+                    if ([dic[@"SampleType"] isEqualToString:@"ArticleName"]) {
                         [self.pointView configTitle:model.pointTitle destitlte:model.pointDesTitle pic:dic[@"PictureUrl"]];
                     return;
                 }

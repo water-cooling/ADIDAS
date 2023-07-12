@@ -1416,7 +1416,7 @@
     [dict setValue:@"" forKey:@"ArticleSize"];
     [dict setValue:@"" forKey:@"Number"];
     [dict setValue:@"" forKey:@"PoNumber"];
-    [dict setValue:@"" forKey:@"IbpoNumber"];
+    [dict setValue:@"" forKey:@"IBPONumber"];
     [dict setValue:@"" forKey:@"PasterNumber"];
     [dict setValue:@"" forKey:@"CartonSize"];
     [dict setValue:@"" forKey:@"ArticleChannel"];
@@ -1430,7 +1430,7 @@
     [dict setValue:@"" forKey:@"UpperMaterial"];
     [dict setValue:@"" forKey:@"ShowWidth"];
     [dict setValue:@"" forKey:@"ExecutiveStandards"];
-    [dict setValue:@"" forKey:@"OutsoleType"];
+    [dict setValue:@"" forKey:@"OutSoleType"];
     [dict setValue:@"" forKey:@"SecurityCategory"];
     [dict setValue:@"" forKey:@"ArticleGrade"];
     [dict setValue:@"" forKey:@"MaterialComposition"];

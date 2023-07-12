@@ -78,6 +78,7 @@
     switch (self.detailType) {
         case NewDetailShoe:{
             ShoeOrderDetailViewController * orderDetail = [ShoeOrderDetailViewController new];
+            orderDetail.title = self.title;
             orderDetail.saveDic = dict;
             [self.navigationController pushViewController:orderDetail animated:YES];
         }
@@ -85,6 +86,7 @@
         case NewDetailDress:{
             DressDetailViewController * orderDetail = [DressDetailViewController new];
             orderDetail.saveDic = dict;
+            orderDetail.title = self.title;
 
             [self.navigationController pushViewController:orderDetail animated:YES];
         }
@@ -92,6 +94,7 @@
         case NewDetailComponent:{
             ReplacementViewController * orderDetail = [ReplacementViewController new];
             orderDetail.saveDic = dict;
+            orderDetail.title = self.title;
             [self.navigationController pushViewController:orderDetail animated:YES];
         }
             break;

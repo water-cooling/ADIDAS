@@ -36,7 +36,6 @@
     [super viewDidLoad];
     self.listTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
-    self.navigationItem.title = @"申请单详情" ;
     
     [self.navigationItem setHidesBackButton:YES animated:NO];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_cn.png"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
@@ -57,7 +56,7 @@
             [self creatNormalNoStickerShoesSZData];
             break;
         case normalNoStickerShoesTJ:
-            [self creatNormalNoStickerShoesTJData];
+            [self creatNormalNoStickerShoesSZData];
             break;
         case specialNoStickerShoes:
             [self creatSpecialNoStickerShoesData];
@@ -132,17 +131,17 @@
 
     CreatTableModel *model8 = [CreatTableModel new];
     model8.cellType = CreateTableTitleShowCell;
-    model8.title = @"鞋舌唛上的IBPO号";
+    model8.title = @"鞋舌唛上的IBPO号：";
     model8.placeholder = @"请输入IBPO号";
     model8.pointTitle = @"鞋舌唛上的IBPO号示意图";
     model8.pointDesTitle = @"请参照吊牌信息填写";
-    model8.key = @"IbpoNumber";
+    model8.key = @"IBPONumber";
     [self.dataArray addObject:model8];
 
     CreatTableModel *model9 = [CreatTableModel new];
     model9.cellType = CreateTablePicCell;
     model9.title = @"";
-    model9.key = @"IbpoNumber";
+    model9.key = @"IBPONumber";
     [self.dataArray addObject:model9];
 
     CreatTableModel *model10 = [CreatTableModel new];
@@ -156,7 +155,7 @@
 
 CreatTableModel *model1 = [CreatTableModel new];
 model1.cellType = CreateTableTitleShowCell;
-model1.title = @"货号:";
+model1.title = @"货号：";
 model1.placeholder = @"请输入货号";
 model1.key = @"ArticleNo";
 [self.dataArray addObject:model1];
@@ -212,7 +211,7 @@ model7.key = @"CaseReason";
 
 CreatTableModel *model1 = [CreatTableModel new];
 model1.cellType = CreateTableTitleShowCell;
-model1.title = @"鞋舌唛上的工厂代号:";
+model1.title = @"鞋舌唛上的工厂代号：";
 model1.pointTitle = @"鞋舌唛上的工厂代号示意图";
 model1.pointDesTitle = @"请参照吊牌信息填写";
 model1.placeholder = @"请输入工厂代号";
@@ -221,7 +220,7 @@ model1.key = @"FactoryId";
 
 CreatTableModel *model2 = [CreatTableModel new];
 model2.cellType = CreateTableTitleShowCell;
-model2.title = @"货号:";
+model2.title = @"货号：";
 model2.placeholder = @"请输入货号";
 model2.key = @"ArticleNo";
 [self.dataArray addObject:model2];
@@ -267,11 +266,11 @@ model7.key = @"ArticleChannel";
 
 CreatTableModel *model8 = [CreatTableModel new];
 model8.cellType = CreateTableTitleShowCell;
-model8.title = @"鞋舌唛上的IBPO号";
+model8.title = @"鞋舌唛上的IBPO号：";
 model8.placeholder = @"请输入IBPO号";
 model8.pointTitle = @"鞋舌唛上的IBPO号示意图";
 model8.pointDesTitle = @"请参照吊牌信息填写";
-model8.key = @"IbpoNumber";
+model8.key = @"IBPONumber";
 [self.dataArray addObject:model8];
 
 CreatTableModel *model9 = [CreatTableModel new];
@@ -293,7 +292,7 @@ model10.key = @"CaseReason";
 
 CreatTableModel *model1 = [CreatTableModel new];
 model1.cellType = CreateTableTitleShowCell;
-model1.title = @"鞋舌唛上的工厂代号";
+model1.title = @"鞋舌唛上的工厂代号：";
 model1.placeholder = @"请输入工厂代号";
 model1.pointTitle = @"鞋舌唛上的工厂代号示意图";
 model1.pointDesTitle = @"请参照吊牌信息填写";
@@ -302,7 +301,7 @@ model1.key = @"FactoryId";
 
 CreatTableModel *model2 = [CreatTableModel new];
 model2.cellType = CreateTableTitleShowCell;
-model2.title = @"货号:";
+model2.title = @"货号：";
 model2.placeholder = @"请输入货号";
 model2.key = @"ArticleNo";
 [self.dataArray addObject:model2];
@@ -348,23 +347,23 @@ model7.key = @"ArticleChannel";
 
 CreatTableModel *model8 = [CreatTableModel new];
 model8.cellType = CreateTableTitleShowCell;
-model8.title = @"鞋舌唛上的IBPO号";
+model8.title = @"鞋舌唛上的IBPO号：";
 model8.placeholder = @"请输入IBPO号";
 model8.pointTitle = @"鞋舌唛上的IBPO号示意图";
 model8.pointDesTitle = @"请参照吊牌信息填写";
-model8.key = @"IbpoNumber";
+model8.key = @"IBPONumber";
 [self.dataArray addObject:model8];
 
 CreatTableModel *model9 = [CreatTableModel new];
 model9.cellType = CreateTableTitleShowCell;
-model9.title = @"贴纸数量";
+model9.title = @"贴纸数量：";
 model9.placeholder = @"请输入贴纸数量";
 model9.key = @"PasterNumber";
 [self.dataArray addObject:model9];
 
 CreatTableModel *model10 = [CreatTableModel new];
 model10.cellType = CreateTableTitleShowCell;
-model10.title = @"鞋舌唛上的生产日期";
+model10.title = @"鞋舌唛上的生产日期：";
 model10.placeholder = @"请输入生产日期";
 model10.pointTitle = @"鞋舌唛上的生产日期示意图";
 model10.pointDesTitle = @"请参照吊牌信息填写";
@@ -373,7 +372,7 @@ model10.key = @"ProductionDate";
 
 CreatTableModel *model11 = [CreatTableModel new];
 model11.cellType = CreateTableTitleShowCell;
-model11.title = @"贴纸上的条形码";
+model11.title = @"贴纸上的条形码：";
 model11.placeholder = @"请输入条形码";
 model11.pointTitle = @"贴纸上的条形码示意图";
 model11.pointDesTitle = @"请参照吊牌信息填写";
@@ -382,7 +381,7 @@ model11.key = @"PasterEancode";
 
 CreatTableModel *model12 = [CreatTableModel new];
 model12.cellType = CreateTableTitleShowCell;
-model12.title = @"Model Name";
+model12.title = @"Model Name：";
 model12.placeholder = @"请输入Model Name";
 model12.pointTitle = @"Model Name示意图";
 model12.pointDesTitle = @"请参照吊牌信息填写";
@@ -391,7 +390,7 @@ model12.key = @"ModelName";
 
 CreatTableModel *model13 = [CreatTableModel new];
 model13.cellType = CreateTableTitleShowCell;
-model13.title = @"性别（请按照贴纸上的描述）";
+model13.title = @"性别（请按照贴纸上的描述)：";
 model13.placeholder = @"请输入性别";
 model13.pointTitle = @"性别示意图";
 model13.pointDesTitle = @"请按照贴纸上的描述";
@@ -400,7 +399,7 @@ model13.key = @"Gender";
 
 CreatTableModel *model14 = [CreatTableModel new];
 model14.cellType = CreateTableTitleShowCell;
-model14.title = @"Category";
+model14.title = @"Category：";
 model14.placeholder = @"请选择";
 model14.pointTitle = @"Category示意图";
 model14.pointDesTitle = @"请参照吊牌信息填写";
@@ -409,7 +408,7 @@ model14.key = @"Category";
 
 CreatTableModel *model15 = [CreatTableModel new];
 model15.cellType = CreateTableTitleShowCell;
-model15.title = @"颜色（请按照贴纸上的描述）";
+model15.title = @"颜色（请按照贴纸上的描述）：";
 model15.placeholder = @"请输入颜色";
 model15.pointTitle = @"颜色示意图";
 model15.pointDesTitle = @"请按照贴纸上的描述";
@@ -418,7 +417,7 @@ model15.key = @"Color";
 
 CreatTableModel *model16 = [CreatTableModel new];
 model16.cellType = CreateTableTitleShowCell;
-model16.title = @"帮面材料（请按照贴纸上的描述）";
+model16.title = @"帮面材料（请按照贴纸上的描述）：";
 model16.placeholder = @"请输入颜色";
 model16.pointTitle = @"帮面材料示意图";
 model16.pointDesTitle = @"请按照贴纸上的描述";
@@ -427,7 +426,7 @@ model16.key = @"UpperMaterial";
 
 CreatTableModel *model17 = [CreatTableModel new];
 model17.cellType = CreateTableTitleShowCell;
-model17.title = @"SHoe Width";
+model17.title = @"SHoe Width：";
 model17.placeholder = @"请选择";
 model17.pointTitle = @"SHoe Width示意图";
 model17.pointDesTitle = @"请按照贴纸上的描述";
@@ -436,7 +435,7 @@ model17.key = @"ShoeWidth";
 
 CreatTableModel *model18 = [CreatTableModel new];
 model18.cellType = CreateTableTitleShowCell;
-model18.title = @"执行标准";
+model18.title = @"执行标准：";
 model18.placeholder = @"请选择";
 model18.pointTitle = @"执行标准示意图";
 model18.pointDesTitle = @"请按照贴纸上的描述";
@@ -445,7 +444,7 @@ model18.key = @"ExecutiveStandards";
 
 CreatTableModel *model19 = [CreatTableModel new];
 model19.cellType = CreateTableTitleShowCell;
-model19.title = @"品名（参看合格证上的描述）";
+model19.title = @"品名（参看合格证上的描述）：";
 model19.pointTitle = @"品名示意图";
 model19.pointDesTitle = @"参看合格证上的描述";
 model19.placeholder = @"请选择";
@@ -454,11 +453,11 @@ model19.key = @"ArticleName";
 
 CreatTableModel *model20 = [CreatTableModel new];
 model20.cellType = CreateTableTitleShowCell;
-model20.title = @"大底类型";
+model20.title = @"大底类型：";
 model20.pointTitle = @"大底类型示意图";
 model20.pointDesTitle = @"参看合格证上的描述";
 model20.placeholder = @"请选择";
-model20.key = @"OutsoleType";
+model20.key = @"OutSoleType";
 [self.dataArray addObject:model20];
 
 CreatTableModel *model21 = [CreatTableModel new];

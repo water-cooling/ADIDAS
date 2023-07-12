@@ -19,5 +19,6 @@ typedef void(^BackAction)(NSInteger index);
 @property (retain, nonatomic) IBOutlet UILabel *kindLabel;
 @property (retain, nonatomic) IBOutlet UILabel *submitLabel;
 @property (retain, nonatomic) IBOutlet UIButton *backBtn;
+@property (retain, nonatomic) IBOutlet UILabel *DivisionLabel;
 
 @end

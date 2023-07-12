@@ -5792,7 +5792,7 @@
 					"$(PROJECT_DIR)/ADIDAS/Utility/Umeng",
 				);
 				MARKETING_VERSION = 1.9.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adidas.enterprise.MobileApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DongwuEducation.longlian;
 				PRODUCT_MODULE_NAME = "Shoebox & Hangtag Solution";
 				PRODUCT_NAME = "Shoebox & Hangtag Solution";
 				PROVISIONING_PROFILE = "3da3fd7c-52be-4385-bfc1-f7420ac4e1dd";
@@ -5813,10 +5813,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				COMPRESS_PNG_FILES = YES;
 				CURRENT_PROJECT_VERSION = 2.4.2;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Z2F894585Y;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5833,12 +5835,13 @@
 					"$(PROJECT_DIR)/ADIDAS/Utility/Umeng",
 				);
 				MARKETING_VERSION = 1.9.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.adidas.enterprise.MobileApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DongwuEducation.longlian;
 				PRODUCT_MODULE_NAME = "Shoebox & Hangtag Solution";
 				PRODUCT_NAME = "Shoebox & Hangtag Solution";
 				PROVISIONING_PROFILE = "3da3fd7c-52be-4385-bfc1-f7420ac4e1dd";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3da3fd7c-52be-4385-bfc1-f7420ac4e1dd";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = DongwuAppstoreDistribution;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = NO;
 				WRAPPER_EXTENSION = app;

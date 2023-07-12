@@ -29,7 +29,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="货号：加载中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvU-Zq-ZDF">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品类：加载中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvU-Zq-ZDF">
                         <rect key="frame" x="97" y="37" width="86" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
@@ -97,6 +97,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="DivisionLabel" destination="JvU-Zq-ZDF" id="3UJ-Dn-0dW"/>
                 <outlet property="backBtn" destination="Zss-Bg-SWh" id="7w0-Pd-AfT"/>
                 <outlet property="goodImageView" destination="Gc8-hG-LPP" id="0sF-6p-04d"/>
                 <outlet property="goodLabel" destination="eT8-ig-3ZN" id="EEn-Eh-PjD"/>

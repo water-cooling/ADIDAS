@@ -55,7 +55,7 @@
     
     CreatTableModel *model1 = [CreatTableModel new];
     model1.cellType = CreateTableTitleShowCell;
-    model1.title = @"工厂代码:";
+    model1.title = @"工厂代码：";
     model1.placeholder = @"请选择";
     model1.pointTitle = @"鞋舌唛上的工厂代号示意图";
     model1.pointDesTitle = @"请参照吊牌信息填写";
@@ -64,7 +64,7 @@
     
     CreatTableModel *model2 = [CreatTableModel new];
     model2.cellType = CreateTableTitleShowCell;
-    model2.title = @"货号";
+    model2.title = @"货号：";
     model2.placeholder = @"请输入货号";
     model2.key = @"ArticleNo";
     [self.dataArray addObject:model2];
@@ -87,7 +87,7 @@
     
     CreatTableModel *model5 = [CreatTableModel new];
     model5.cellType = CreateTableTitleShowCell;
-    model5.title = @"尺码/号型";
+    model5.title = @"尺码/号型：";
     model5.placeholder = @"请输入尺码";
     model5.key = @"ArticleSize";
     [self.dataArray addObject:model5];
@@ -128,14 +128,14 @@
     
     CreatTableModel *model10 = [CreatTableModel new];
     model10.cellType = CreateTableTitleShowCell;
-    model10.title = @"材料成分";
+    model10.title = @"材料成分：";
     model10.placeholder = @"请选择";
     model10.key = @"PasterEancode";
     [self.dataArray addObject:model10];
     
     CreatTableModel *model11 = [CreatTableModel new];
     model11.cellType = CreateTableTitleShowCell;
-    model11.title = @"注意/注意事项";
+    model11.title = @"注意/注意事项：";
     model11.placeholder = @"请选择";
     model11.key = @"Attention";
     [self.dataArray addObject:model11];

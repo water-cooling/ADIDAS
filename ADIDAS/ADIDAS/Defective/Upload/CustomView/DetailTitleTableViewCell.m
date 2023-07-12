@@ -29,7 +29,21 @@
                     self.DesTitleLab.text = @"";
                 }
                 
-            }else{
+            }else if ([self.creatTableModel.key isEqualToString:@"Division"]){
+                NSString * devision;
+                if ([[dict valueForKey:@"Division"] isEqualToString:@"FTW"]) {
+                    devision = @"鞋类";
+                } else if ([[dict valueForKey:@"Division"] isEqualToString:@"APP"]){
+                    devision = @"服装";
+                }else if ([[dict valueForKey:@"Division"] isEqualToString:@"ACC"]){
+                    devision = @"配件";
+
+                }else{
+                    devision = @"";
+                }
+                self.DesTitleLab.text = devision;
+
+            } else{
                 self.DesTitleLab.text = dict[self.creatTableModel.key] ?:@"";
             }
         }else{

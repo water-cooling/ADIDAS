@@ -80,6 +80,8 @@
         
         if (responseObject && [[responseObject objectForKey:@"Code"] integerValue] == 200) {
             NSDictionary * dict =  [[responseObject valueForKey:@"Msg"]JSONValue];
+            NSLog(@"home%@",dict);
+
             if (dict) {
                 firstArray = [dict valueForKey:@"0"];
                 secondArray = [dict valueForKey:@"1"];
@@ -265,10 +267,25 @@
        
     if (dic&&![dic isEqual:[NSNull null]]) {
         
-            cell.kindLabel.text = [NSString stringWithFormat:@"种类：%@",[dic valueForKey:@"CaseCategory"]];
+        cell.kindLabel.text = [NSString stringWithFormat:@"补发种类：%@",[dic valueForKey:@"CaseCategory"]];
+        NSString * devision;
+        if ([[dic valueForKey:@"Division"] isEqualToString:@"FTW"]) {
+            devision = @"鞋类";
+        } else if ([[dic valueForKey:@"Division"] isEqualToString:@"APP"]){
+            devision = @"服装";
+
+        }else if ([[dic valueForKey:@"Division"] isEqualToString:@"ACC"]){
+            
+            devision = @"配件";
+
+        }else{
+            devision = @"";
+        }
+        cell.DivisionLabel.text = [NSString stringWithFormat:@"品类：%@",devision];
+
             cell.submitLabel.text = [NSString stringWithFormat:@"提交时间：%@",[dic valueForKey:@"CaseDate"]];
             cell.orderLabel.text = [NSString stringWithFormat:@"单号：%@",[dic valueForKey:@"CaseNumber"]];
-            cell.goodLabel.text = [NSString stringWithFormat:@"货号：%@",[dic valueForKey:@"ArticleList"]];
+            cell.goodLabel.text = [NSString stringWithFormat:@"品类：%@",[dic valueForKey:@"ArticleList"]];
         
         if ([dic valueForKey:@"PictureUrl"]&&![[dic valueForKey:@"PictureUrl"] isEqual:[NSNull null]]&&![[dic valueForKey:@"PictureUrl"] isEqualToString:@""]) {
             
@@ -277,13 +294,14 @@
         
         
         if ([[NSString stringWithFormat:@"%@",[dic valueForKey:@"IsNew"]] isEqualToString:@"1"]) {
-            
+            cell.DivisionLabel.font = [UIFont boldSystemFontOfSize:14];
             cell.kindLabel.font = [UIFont boldSystemFontOfSize:14];
             cell.submitLabel.font = [UIFont boldSystemFontOfSize:14];
             cell.orderLabel.font = [UIFont boldSystemFontOfSize:14];
             cell.goodLabel.font =[UIFont boldSystemFontOfSize:14];
         }
         else {
+            cell.DivisionLabel.font = [UIFont systemFontOfSize:14];
             cell.kindLabel.font = [UIFont systemFontOfSize:14];
             cell.submitLabel.font = [UIFont systemFontOfSize:14];
             cell.orderLabel.font = [UIFont systemFontOfSize:14];

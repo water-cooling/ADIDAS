@@ -54,7 +54,7 @@
 - (void)creatNormalNoStickerShoesSZData{
     CreatTableModel *model1 = [CreatTableModel new];
     model1.cellType = CreateTableTitleShowCell;
-    model1.title = @"工厂代码:";
+    model1.title = @"工厂代码：";
     model1.placeholder = @"请选择";
     model1.pointTitle = @"鞋舌唛上的工厂代号示意图";
     model1.pointDesTitle = @"请参照吊牌信息填写";
@@ -63,7 +63,7 @@
     
     CreatTableModel *model2 = [CreatTableModel new];
     model2.cellType = CreateTableTitleShowCell;
-    model2.title = @"货号";
+    model2.title = @"货号：";
     model2.placeholder = @"请输入货号";
     model2.key = @"ArticleNo";
     [self.dataArray addObject:model2];
@@ -86,7 +86,7 @@
     
     CreatTableModel *model5 = [CreatTableModel new];
     model5.cellType = CreateTableTitleShowCell;
-    model5.title = @"尺码";
+    model5.title = @"尺码：";
     model5.placeholder = @"请输入尺码";
     model5.key = @"ArticleSize";
     [self.dataArray addObject:model5];
@@ -127,7 +127,7 @@
     
     CreatTableModel *model10 = [CreatTableModel new];
     model10.cellType = CreateTableTitleShowCell;
-    model10.title = @"条形码编号";
+    model10.title = @"条形码编号：";
     model10.placeholder = @"请输入编号";
     model10.pointTitle = @"条形码示意图";
     model10.pointDesTitle = @"请参照吊牌信息填写";

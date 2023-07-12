@@ -120,8 +120,8 @@
     model1.cellType = CreateTableTFCell;
     model1.title = @"补寄地址:";
     model1.placeholder = @"请输入补寄地址";
-    [self.saveDic setValue:[self GetLoginUser].Address forKey:@"Address"];
     model1.value = [self GetLoginUser].Address;
+    [self.saveDic setValue:[self GetLoginUser].Address forKey:@"Address"];
     model1.key = @"Address";
     [self.dataArr addObject:model1];
     
@@ -130,7 +130,7 @@
     model2.title = @"联系人姓名：";
     model2.placeholder = @"请输入联系人姓名";
     model2.value = [self GetLoginUser].LinkMan;
-    [self.saveDic setValue:[self GetLoginUser].Address forKey:@"ContacePerson"];
+    [self.saveDic setValue:[self GetLoginUser].LinkMan forKey:@"ContacePerson"];
     model2.key = @"ContacePerson";
     [self.dataArr addObject:model2];
     
@@ -139,7 +139,7 @@
     model3.title = @"电话：";
     model3.placeholder = @"请输入电话";
     model3.value = [self GetLoginUser].LinkTel;
-    [self.saveDic setValue:[self GetLoginUser].Address forKey:@"ContaceNumber"];
+    [self.saveDic setValue:[self GetLoginUser].LinkTel forKey:@"ContaceNumber"];
     model3.key = @"ContaceNumber";
     [self.dataArr addObject:model3];
     
@@ -175,15 +175,15 @@
     
     CreatTableModel *model7 = [CreatTableModel new];
     model7.cellType = CreateTableDownCell;
-    model7.title = @"品种";
-    model7.placeholder = @"请选择品种";
+    model7.title = @"品类：";
+    model7.placeholder = @"请选择品类";
     model7.key = @"Division";
     [self.dataArr addObject:model7];
 
     
     CreatTableModel *model8 = [CreatTableModel new];
     model8.cellType = CreateTableDownCell;
-    model8.title = @"补发类别";
+    model8.title = @"补发类别：";
     model8.placeholder = @"请选择补发类别";
     model8.key = @"CaseCategory";
     [self.dataArr addObject:model8];
@@ -198,11 +198,13 @@
     
     for (CreatTableModel * model in self.dataArr) {
         if (!IsStrEmpty(model.key)) {
-            [self.saveDic setValue:@"" forKey:model.key];
-
+            if (IsStrEmpty(model.value)) {
+                [self.saveDic setValue:@"" forKey:model.key];
+                }
+            }
         }
         
-    }
+    
     [self.saveDic setValue:@"" forKey:@"IsRemark"];
     [self.saveDic setValue:@"" forKey:@"ShowCartonType"];
 
@@ -272,10 +274,11 @@
          
                 cell.imageArray = self.picArray;
                 cell.pickBlock = ^{
-                    [HeadImageManager alertUploadHeaderImageActionSheet:weakSelf imageSuccess:^(UIImage *image) {
-                        [weakSelf imagePickerController:image];
-                    }];
-                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [HeadImageManager alertUploadHeaderImageActionSheet:weakSelf imageSuccess:^(UIImage *image) {
+                            [weakSelf imagePickerController:image];
+                        }];
+                    });
                     
                 };
               
@@ -316,7 +319,7 @@
             title = @"请选择外箱";
             titleArr = @[@"完好",@"破损"];
         }else if ([model.key isEqualToString:@"Division"]){
-            title = @"请选择品种";
+            title = @"请选择品类";
             titleArr = @[@"鞋类",@"服装",@"配件"];
             
         }else if ([model.key isEqualToString:@"CaseCategory"]){
@@ -343,9 +346,20 @@
                 }else{
                     [weakSelf.dataArr insertObject:self.templeModel atIndex:5];
                 }
-            }else if ([titleArr[index] isEqualToString:@"完好"]){
+            }
+            if ([model.key isEqualToString:@"Division"]) {
+                if (weakSelf.saveDic[@"Division"] && ![weakSelf.saveDic[@"Division"] isEqualToString:titleArr[index]]) {
+                    if (weakSelf.saveDic[@"CaseCategory"]) {
+                        [weakSelf.saveDic removeObjectForKey:@"CaseCategory"];
+                    }
+                }
+            }
+    
+            if ([titleArr[index] isEqualToString:@"完好"]){
                 [weakSelf.dataArr removeObject:self.templeModel];
-            }else if ([titleArr[index] isEqualToString:@"鞋盒(不含鞋盒上的贴纸)"]){
+            }
+            
+            if ([titleArr[index] isEqualToString:@"鞋盒(不含鞋盒上的贴纸)"]){
                 UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"请将原鞋盒上的贴纸撕下，贴至补发的新鞋盒上使用" message:@"" preferredStyle:UIAlertControllerStyleAlert];
                
                     UIAlertAction *ac1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -434,7 +448,7 @@
         return;
     }
     if (!self.saveDic[@"Division"]||IsStrEmpty(self.saveDic[@"Division"])) {
-        [self showAlertWithDispear:@"请选择品种"];
+        [self showAlertWithDispear:@"请选择品类"];
         return;
     }
     if (!self.saveDic[@"CaseCategory"]|| IsStrEmpty(self.saveDic[@"CaseCategory"])) {
