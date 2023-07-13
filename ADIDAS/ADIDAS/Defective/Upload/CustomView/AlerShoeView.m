@@ -46,7 +46,7 @@
     self.desTitLab = [[UILabel alloc]init];
     self.desTitLab.text = @"如选择不接受，补寄时间可能较长";
     self.desTitLab.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightRegular];
-    self.desTitLab.textColor = [UIColor blackColor];
+    self.desTitLab.textColor = [UIColor redColor];
     [self.bgView addSubview:self.desTitLab];
         
     CGFloat wdith = (PHONE_WIDTH-70)/2;

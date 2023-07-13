@@ -1413,7 +1413,7 @@
                 if (self.categoryArray) {
                     CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.categoryArray title:@"请选择性别"];
                     sheetView.block = ^(NSInteger index) {
-                        [weakSelf.saveDic setValue:weakSelf.categoryArray[index] forKey:@"CateGory"];
+                        [weakSelf.saveDic setValue:weakSelf.categoryArray[index] forKey:@"Category"];
                         [weakSelf.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil]withRowAnimation:UITableViewRowAnimationNone];
                         
                     };
@@ -1601,7 +1601,7 @@
                 if (self.outSoleArray) {
                     CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.outSoleArray title:@"请选择大底类型"];
                     sheetView.block = ^(NSInteger index) {
-                        [weakSelf.saveDic setValue:weakSelf.outSoleArray[index] forKey:@"outSoleArray"];
+                        [weakSelf.saveDic setValue:weakSelf.outSoleArray[index] forKey:@"OutSoleType"];
                         [weakSelf.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil]withRowAnimation:UITableViewRowAnimationNone];
                         
                     };
