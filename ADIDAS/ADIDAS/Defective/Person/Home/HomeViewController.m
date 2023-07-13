@@ -285,7 +285,7 @@
 
             cell.submitLabel.text = [NSString stringWithFormat:@"提交时间：%@",[dic valueForKey:@"CaseDate"]];
             cell.orderLabel.text = [NSString stringWithFormat:@"单号：%@",[dic valueForKey:@"CaseNumber"]];
-            cell.goodLabel.text = [NSString stringWithFormat:@"品类：%@",[dic valueForKey:@"ArticleList"]];
+            cell.goodLabel.text = [NSString stringWithFormat:@"货号：%@",[dic valueForKey:@"ArticleList"]];
         
         if ([dic valueForKey:@"PictureUrl"]&&![[dic valueForKey:@"PictureUrl"] isEqual:[NSNull null]]&&![[dic valueForKey:@"PictureUrl"] isEqualToString:@""]) {
             

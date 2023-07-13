@@ -1379,7 +1379,7 @@
     if (self.categoryArray) {
             CustomSheetAlerView * sheetView = [[CustomSheetAlerView alloc]initWithList:self.categoryArray title:@"请选择分类"];
             sheetView.block = ^(NSInteger index) {
-                [weakSelf.saveDic setValue:weakSelf.categoryArray[index] forKey:@"CateGory"];
+                [weakSelf.saveDic setValue:weakSelf.categoryArray[index] forKey:@"Category"];
                 [weakSelf.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil]withRowAnimation:UITableViewRowAnimationNone];
                 
             };

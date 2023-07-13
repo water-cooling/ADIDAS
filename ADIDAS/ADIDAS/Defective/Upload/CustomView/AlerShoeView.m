@@ -10,6 +10,8 @@
 @interface AlerShoeView ()
 @property (nonatomic,strong)UIView *bgView;
 @property (nonatomic,strong)UILabel *titLab;
+@property (nonatomic,strong)UILabel *desTitLab;
+
 @property (nonatomic,strong)UIButton *cancelBtn;
 @property (nonatomic,strong)UIButton *sureBtn;
 @property (nonatomic, assign) NSInteger lastIndex;
@@ -36,10 +38,16 @@
     [self addSubview:self.bgView];
     self.lastIndex =0;
     self.titLab = [[UILabel alloc]init];
-    self.titLab.text = @"是否普通鞋盒代替特殊鞋盒？";
+    self.titLab.text = @"是否接受普通鞋盒代替特殊鞋盒?";
     self.titLab.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightRegular];
     self.titLab.textColor = [UIColor blackColor];
     [self.bgView addSubview:self.titLab];
+    
+    self.desTitLab = [[UILabel alloc]init];
+    self.desTitLab.text = @"如选择不接受，补寄时间可能较长";
+    self.desTitLab.font = [UIFont systemFontOfSize:14.0 weight:UIFontWeightRegular];
+    self.desTitLab.textColor = [UIColor blackColor];
+    [self.bgView addSubview:self.desTitLab];
         
     CGFloat wdith = (PHONE_WIDTH-70)/2;
     _cancelBtn = [[UIButton alloc] init];
@@ -49,7 +57,7 @@
     _cancelBtn.layer.borderColor = [CommonUtil colorWithHexString:@"#DCDEE0"].CGColor;
     _cancelBtn.layer.masksToBounds = YES;
     _cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-    [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [_cancelBtn setTitle:@"不接受" forState:UIControlStateNormal];
     [_cancelBtn addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
     [self.bgView addSubview:_cancelBtn];
     
@@ -59,18 +67,23 @@
     _sureBtn.layer.masksToBounds = YES;
     _sureBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     _sureBtn.backgroundColor = [CommonUtil colorWithHexString:@"#2355E6"];
-    [_sureBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [_sureBtn setTitle:@"接受" forState:UIControlStateNormal];
     [_sureBtn addTarget:self action:@selector(sureAction) forControlEvents:UIControlEventTouchUpInside];
     [self.bgView addSubview:_sureBtn];
     
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(PHONE_WIDTH-20, 140));
+        make.size.mas_equalTo(CGSizeMake(PHONE_WIDTH-20, 170));
             
     }];
     [self.titLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(self.bgView);
             make.top.equalTo(self.bgView).offset(22);
+            
+    }];
+    [self.desTitLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.bgView);
+            make.top.equalTo(self.titLab).offset(22);
             
     }];
     

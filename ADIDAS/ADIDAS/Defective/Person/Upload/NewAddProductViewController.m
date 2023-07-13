@@ -470,7 +470,7 @@
             shoeDetailVc.folderName = weakSelf.folderName;
             shoeDetailVc.isNormalShoe = YES;
             [weakSelf.saveDic setValue:@"普通鞋盒" forKey:@"ShowCartonType"];
-            shoeDetailVc.title = weakSelf.saveDic[@"CartonNumber"];
+            shoeDetailVc.title = [NSString stringWithFormat:@"%@号箱",weakSelf.saveDic[@"CartonNumber"]];
             
             shoeDetailVc.dict = weakSelf.saveDic.copy;
             shoeDetailVc.picArr = weakSelf.picArray.copy;
@@ -480,8 +480,8 @@
         aler.cancelBlock = ^{
             ApplyShoesViewController * shoeDetailVc = [[ApplyShoesViewController alloc]initWithNibName:@"ApplyShoesViewController" bundle:nil];
             [weakSelf.saveDic setValue:@"特殊鞋盒" forKey:@"ShowCartonType"];
-            shoeDetailVc.title = weakSelf.saveDic[@"CartonNumber"];
-            
+            shoeDetailVc.title = [NSString stringWithFormat:@"%@号箱",weakSelf.saveDic[@"CartonNumber"]];
+
             shoeDetailVc.dict = weakSelf.saveDic.copy;
             shoeDetailVc.picArr = weakSelf.picArray.copy;
 
@@ -496,9 +496,9 @@
         ApplyShoesViewController * shoeDetailVc = [ApplyShoesViewController new];
         shoeDetailVc.isNormalShoe = YES;
         shoeDetailVc.folderName = self.folderName;
-        shoeDetailVc.title = weakSelf.saveDic[@"CartonNumber"];
         shoeDetailVc.dict = weakSelf.saveDic.copy;
         shoeDetailVc.picArr = weakSelf.picArray.copy;
+        shoeDetailVc.title = [NSString stringWithFormat:@"%@号箱",weakSelf.saveDic[@"CartonNumber"]];
 
         shoeDetailVc.detailType = NewDetailDress;
         [weakSelf.navigationController pushViewController:shoeDetailVc animated:YES];
@@ -510,7 +510,7 @@
         shoeDetailVc.detailType = NewDetailComponent;
         shoeDetailVc.dict = weakSelf.saveDic.copy;
         shoeDetailVc.picArr = weakSelf.picArray.copy;
-
+        shoeDetailVc.title = [NSString stringWithFormat:@"%@号箱",weakSelf.saveDic[@"CartonNumber"]];
         [weakSelf.navigationController pushViewController:shoeDetailVc animated:YES];
         
     }
